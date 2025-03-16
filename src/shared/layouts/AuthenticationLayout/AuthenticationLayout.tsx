@@ -1,23 +1,14 @@
 import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
-import LogoIcon from '../../ui/icons/LogoIcon/LogoIcon';
 
 const Container = styled.section`
   width: 100%;
-  position: relative;
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: min-content auto;
+  height: 100vh;
 `;
 
-const Logo = styled.div`
-  position: absolute;
-  top: 68px;
-  left: 60px;
-`;
-
-const Side = styled.div`
-  height: 100%;
-`;
+const Side = styled.div``;
 
 interface AuthenticationLayoutProps {
   children: [ReactNode, ReactNode];
@@ -34,11 +25,8 @@ const AuthenticationLayout: FC<AuthenticationLayoutProps> = ({ children }) => {
   }
   return (
     <Container>
-      <Logo>
-        <LogoIcon />
-      </Logo>
-      {children.map((node) => (
-        <Side>{node}</Side>
+      {children.map((node, index) => (
+        <Side key={index}>{node}</Side>
       ))}
     </Container>
   );

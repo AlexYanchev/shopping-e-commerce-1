@@ -1,7 +1,8 @@
 @font-face {
   font-family: 'Jost';
   src:
-    local('Jost'),
+    url('./Jost/Jost-Bold.woff2') format('woff2'),
+    url('./Jost/Jost-Bold.woff') format('woff'),
     url('./Jost/Jost-Bold.ttf') format('ttf');
   font-style: normal;
   font-weight: 700;
@@ -10,7 +11,8 @@
 @font-face {
   font-family: 'Jost';
   src:
-    local('Jost'),
+    url('./Jost/Jost-Regular.woff2') format('woff2'),
+    url('./Jost/Jost-Regular.woff') format('woff'),
     url('./Jost/Jost-Regular.ttf') format('ttf');
   font-style: normal;
   font-weight: 400;

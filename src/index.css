@@ -8,22 +8,15 @@
 
 :root {
   --main-color-dark: 19, 17, 24;
-}
-
-html {
-  height: 100%;
+  --main-color-grey: 164, 161, 170;
 }
 
 body {
-  margin: 0;
   font-family:
     'Jost', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
     'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
-}
 
-#root {
-  height: 100%;
+  color: var(--main-color-dark);
 }
