@@ -1,4 +1,7 @@
 .App {
-  min-height: 100vh;
+  margin: auto;
+  display: grid;
+  place-items: center;
+  height: 100%;
   max-width: 1440px;
 }

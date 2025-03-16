@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Jost';
+  src:
+    local('Jost'),
+    url('./Jost/Jost-Bold.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src:
+    local('Jost'),
+    url('./Jost/Jost-Regular.ttf') format('ttf');
+  font-style: normal;
+  font-weight: 400;
+}
