@@ -3,6 +3,14 @@ import styled, { StyledInstance } from 'styled-components';
 
 type T_TitleType = 'h1' | 'h2' | 'h3' | 'h4';
 
+const Container = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 50px 0;
+`;
+
 const Subtitle = styled.p`
   font-size: 1rem;
   color: rgb(var(--main-color-grey));
@@ -38,6 +46,7 @@ interface FormProps {
   titleText: string;
   subtitleText?: string | undefined;
   children: ReactNode;
+  topChildren?: ReactNode | undefined;
 }
 
 const Form: FC<FormProps> = ({
@@ -45,14 +54,16 @@ const Form: FC<FormProps> = ({
   titleText,
   subtitleText,
   children,
+  topChildren,
 }) => {
   const Title = titleTags[titleType];
   return (
-    <>
+    <Container>
+      {topChildren}
       <Title>{titleText}</Title>
       {subtitleText && <Subtitle>{subtitleText}</Subtitle>}
       <form>{children}</form>
-    </>
+    </Container>
   );
 };
 

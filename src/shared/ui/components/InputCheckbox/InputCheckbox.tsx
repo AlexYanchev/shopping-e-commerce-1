@@ -1,8 +1,16 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import styled from 'styled-components';
 import CheckboxIcon from '../../icons/CheckboxIcon/CheckboxIcon';
 
 const Container = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 1.875rem;
+`;
+
+const InputContainer = styled.div`
   display: flex;
   gap: 10px;
   align-items: center;
@@ -48,18 +56,27 @@ const Input = styled.input`
 interface InputCheckboxProps {
   name: string;
   id?: string | undefined;
-  textLabel?: string | undefined;
+  textLabel?: string | ReactNode | undefined;
+  children?: ReactNode | undefined;
 }
 
-const InputCheckbox: FC<InputCheckboxProps> = ({ name, id, textLabel }) => {
+const InputCheckbox: FC<InputCheckboxProps> = ({
+  name,
+  id,
+  textLabel,
+  children,
+}) => {
   const inputId = id ? id : name;
   return (
     <Container>
-      <Input type="checkbox" name={name} id={inputId} />
-      <CheckboxIconContainer htmlFor={inputId}>
-        <CheckboxIcon />
-      </CheckboxIconContainer>
-      {textLabel && <Label htmlFor={inputId}>{textLabel}</Label>}
+      <InputContainer>
+        <Input type="checkbox" name={name} id={inputId} />
+        <CheckboxIconContainer htmlFor={inputId}>
+          <CheckboxIcon />
+        </CheckboxIconContainer>
+        {textLabel && <Label htmlFor={inputId}>{textLabel}</Label>}
+      </InputContainer>
+      {children}
     </Container>
   );
 };
